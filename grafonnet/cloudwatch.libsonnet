@@ -12,6 +12,7 @@
    * @param alias (optional)
    * @param highResolution (default: `false`)
    * @param period (default: `'1m'`)
+   * @param hide (optional) Set to `true` to hide the target from the panel.
    * @param dimensions (optional)
 
    * @return Panel target
@@ -26,8 +27,10 @@
     alias=null,
     highResolution=false,
     period='1m',
+    hide=null,
     dimensions={}
   ):: {
+    [if hide != null then 'hide']: hide,
     region: region,
     namespace: namespace,
     metricName: metric,
