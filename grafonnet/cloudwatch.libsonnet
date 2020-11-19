@@ -14,6 +14,7 @@
    * @param period (default: `'1m'`)
    * @param hide (optional) Set to `true` to hide the target from the panel.
    * @param expression (optional)
+   * @param id (optional)
    * @param dimensions (optional)
 
    * @return Panel target
@@ -30,10 +31,12 @@
     period='1m',
     hide=null,
     expression=null,
+    id=null,
     dimensions={}
   ):: {
     [if hide != null then 'hide']: hide,
     [if expression != null then 'expression']: expression,
+    [if id != null then 'id']: id,
     region: region,
     namespace: namespace,
     metricName: metric,
